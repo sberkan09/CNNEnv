@@ -15,7 +15,6 @@ class MammoDataset(CustomDataset):
     class_names = class_file.read()
     CLASSES = tuple(class_names.split(','))
     class_file.close()
-    os.remove(os.path.join(os.path.abspath("."), 'classes.txt'))
 
     def load_annotations(self, ann_file):
         ann_list = mmcv.list_from_file(ann_file)

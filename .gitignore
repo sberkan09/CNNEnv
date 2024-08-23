@@ -1,4 +1,5 @@
 .ipynb_checkpoints/
 *.pth
 __pycache__
+*.png
 data/
