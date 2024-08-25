@@ -4,6 +4,7 @@ import cv2
 from PIL import Image
 import argparse
 import os
+import wget
 
 parser = argparse.ArgumentParser()
 
@@ -20,6 +21,10 @@ model_path = args.model_path
 device = args.device
 data_path = args.data_path
 result_path = args.result_path
+
+if not os.path.exists(model_path):
+    url = 'https://github.com/cbddobvyz/digitaleye-mammography/releases/download/shared-models.v1/detr.pth'
+    wget.download(url, out='models/')
 
 if not os.path.exists(result_path):
     os.mkdir(result_path)
